@@ -1,11 +1,11 @@
 def get_multiplied_digits(number):
     str_number = str(number)
-    pr = 1
     for i in str_number:
         first = int(i)
-        if int(i) > 0:
-            pr *= first
-    return pr
+        if len(str_number) != 1:
+            return first * get_multiplied_digits(int(str_number[1:]))
+        else:
+            return first
 
 
 f = int(input("Введите число: "))
